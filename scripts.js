@@ -864,7 +864,8 @@ function replacePlaceholders(response, userInput) {
         // .replace(/MY_SEARCH_URL/g, "https://void-web-search-app.vercel.app/search/" + encodeURIComponent(userInput.replace(/ /g, '+')))
         // .replace(/SEARCH_URL/g, "https://www.google.com/search?q=" + encodeURIComponent(userInput.replace(/ /g, '+')) + "&igu=1");
         .replace(/GPS_URL/g, "https://www.google.com/maps?q=" + userInput.replace(/ /g, '+'))
-        .replace(/MY_SEARCH_URL/g, "https://void-web-search-app.vercel.app/search/" + userInput.replace(/ /g, '+'))
+        //.replace(/MY_SEARCH_URL/g, "https://void-web-search-app.vercel.app/search/" + userInput.replace(/ /g, '+'))
+        .replace(/MY_SEARCH_URL/g, "https://www.google.com/search?q=" + userInput.replace(/ /g, '+') + "&btnI")
         .replace(/SEARCH_URL/g, "https://www.google.com/search?q=" + userInput.replace(/ /g, '+') + "&btnI");
 }
 
