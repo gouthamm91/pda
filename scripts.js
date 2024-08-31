@@ -1,4 +1,4 @@
-// new intent test 4
+// new intent test 5
 // const intents = i = [
 //     {
 //       "tag": "abilities",
@@ -1105,7 +1105,7 @@ const vocabulary = buildVocabulary(data());
 
 // Train logistic regression on the intent patterns
 // const weights = trainLogisticRegression(intents, vocabulary, 1000, 0.01);
-const weights = trainLogisticRegression(data(), vocabulary, 1000, 0.01);
+const weights = trainLogisticRegression(data(), vocabulary, 500, 0.02);
 
 // function speak(text) {
 //     const utterance = new SpeechSynthesisUtterance(text);
