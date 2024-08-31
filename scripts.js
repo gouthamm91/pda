@@ -192,6 +192,8 @@
 //       "responses": ['bye', 'goodbye', 'see you', 'see you later', 'see you soon', 'see you tomorrow', 'bye bye']
 //     }];
 
+function data() {
+
 
 const intents = [
  {'tag': 'abilities',
@@ -1000,6 +1002,10 @@ const intents = [
    'see you soon',
    'see you tomorrow',
    'bye bye']}];
+ 
+  return intents;
+}
+
 
 // // Function to get current time
 // function getCurrentTime() {
@@ -1094,10 +1100,12 @@ const intents = [
 
 
 // Vocabulary building from patterns (preprocessing)
-const vocabulary = buildVocabulary(intents);
+// const vocabulary = buildVocabulary(intents);
+const vocabulary = buildVocabulary(data());
 
 // Train logistic regression on the intent patterns
-const weights = trainLogisticRegression(intents, vocabulary, 1000, 0.01);
+// const weights = trainLogisticRegression(intents, vocabulary, 1000, 0.01);
+const weights = trainLogisticRegression(data(), vocabulary, 1000, 0.01);
 
 // function speak(text) {
 //     const utterance = new SpeechSynthesisUtterance(text);
