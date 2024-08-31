@@ -1,4 +1,4 @@
-// new intent test
+// new intent test 2
 const intents = i = [
     {
       "tag": "abilities",
