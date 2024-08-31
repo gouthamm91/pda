@@ -2,7 +2,7 @@
 const intents = i = [
     {
       "tag": "abilities",
-      "patterns": ['what can you do', 'what are your capabilities', 'what are you capable of', 'what are you abilities', 'what are you good at', 'what tasks can you do', 'what tasks can you perform"],
+      "patterns": ['what can you do', 'what are your capabilities', 'what are you capable of', 'what are you abilities', 'what are you good at', 'what tasks can you do', 'what tasks can you perform'],
       "responses": ['I have a veriety tasks I can perform.\n1. I can tell you date and time.\n2. I can initiate a web search for you\n3. I can take you to a website\n4. I can answer simple personal questions\n5. I can help you book Trains, Flights, Buses, Hotels and Resorts\n6. I can book movies for you.', 'I can perform a veriety of tasks.\n1. I can tell you date and time.\n2. I can initiate a web search for you\n3. I can take you to a website\n4. I can answer simple personal questions\n5. I can help you book Trains, Flights, Buses, Hotels and Resorts\n6. I can book movies for you.']
     }, 
 
