@@ -1130,7 +1130,8 @@ const vocabulary = buildVocabulary(intents);
 // Train logistic regression on the intent patterns
 // const weights = trainLogisticRegression(intents, vocabulary, 1000, 0.01);
 const weights = trainLogisticRegression(intents, vocabulary, 500, 0.02);
-
+console.log("const weights = " + weights);
+        
 // function speak(text) {
 //     const utterance = new SpeechSynthesisUtterance(text);
 //     utterance.lang = 'en-US'; // You can change this to any supported language
