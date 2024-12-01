@@ -1,4 +1,4 @@
-<!-- Version - 2.1 -->
+<!-- Version - 2.2 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -201,7 +201,7 @@ function handleUserInput() {
     // Predict the intent using logistic regression
     // const intent = predictIntent(userInputEditted, weights, vocabulary);
     var response = predictIntent(userInputEditted);
-    var displayResponse = replacePlaceholders(selectedResponse, userInput);
+    var displayResponse = replacePlaceholders(response, userInput);
     if (response.split("|").length > 1) {
         var link = response.split(" ")[response.split(" ").length - 1].split("|")[Math.floor(Math.random() * intent.response.length)];
         var displayResponse = displayResponse.split("https://")[0] + " " + link;
