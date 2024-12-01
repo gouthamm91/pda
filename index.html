@@ -1,4 +1,4 @@
-<!-- Version - 6 -->
+<!-- Version - 2.0 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -199,28 +199,16 @@ function handleUserInput() {
     chatLog.appendChild(userMessage);
 
     // Predict the intent using logistic regression
-    const intent = predictIntent(userInputEditted, weights, vocabulary);
-
-    var selectedResponse = "AI: I didn't understand that.";
-    if (intent) {
-        const assistantMessage = document.createElement("p");
-        // assistantMessage.textContent = "Veronica: " + intent.response[0];
-        // assistantMessage.textContent = "Veronica: " + replacePlaceholders(intent.response[0], userInput);
-        // const selectedResponse = intent.response[0]; 
-        console.log(intent);
-        console.log();
-        console.log(intent.response);
-        console.log();
-        var selectedResponse = intent.response[Math.floor(Math.random() * intent.response.length)];
-        var displayResponse = replacePlaceholders(selectedResponse, userInput);
-        assistantMessage.innerHTML = "AI: " + displayResponse;
-        chatLog.appendChild(assistantMessage);
-        // const finalResponse = replacePlaceholders(responseTemplate, userInput);
-    } else {
-        const assistantMessage = document.createElement("p");
-        assistantMessage.textContent = selectedResponse;
-        chatLog.appendChild(assistantMessage);
+    // const intent = predictIntent(userInputEditted, weights, vocabulary);
+    var response = predictIntent(userInputEditted);
+    var displayResponse = replacePlaceholders(selectedResponse, userInput);
+    if (response.split("|").length > 1) {
+        var link = response.split(" ")[response.split(" ").length - 1].split("|")[Math.floor(Math.random() * intent.response.length)];
+        var displayResponse = displayResponse.split("https://")[0] + " " + link;
     }
+    const assistantMessage = document.createElement("p");
+    assistantMessage.innerHTML = "VERONICA: " + displayResponse;
+    chatLog.appendChild(assistantMessage);
 
     // Clear user input and scroll chat to the bottom
     document.getElementById("user-input").value = "";
