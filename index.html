@@ -1,4 +1,4 @@
-<!-- Version - 2.6 -->
+<!-- Version - 2.7 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,14 +138,21 @@ function getFemaleVoice() {
     // return voices[7];
 }
 
+// function mytts(msg){const utterance = new SpeechSynthesisUtterance(msg);const voices = speechSynthesis.getVoices().filter(voice => voice.voiceURI === 'Google US English');if (voices.length > 0) {utterance.voice = voices[0];};window.speechSynthesis.speak(utterance);return 1;};
+
 // Function to speak a given text using the Web Speech API
 function speak(text) {
+    // const utterance = new SpeechSynthesisUtterance(text);
+    // var femaleVoice = getFemaleVoice();
+    // utterance.voice = femaleVoice;
+    // console.log(femaleVoice)
+    // utterance.lang = 'en-US'; // You can change this to the desired language
+    // // window.setTimeout(function () {window.speechSynthesis.speak(utterance);}, 250);
+    // window.speechSynthesis.speak(utterance);
+
     const utterance = new SpeechSynthesisUtterance(text);
-    var femaleVoice = getFemaleVoice();
-    utterance.voice = femaleVoice;
-    console.log(femaleVoice)
-    utterance.lang = 'en-US'; // You can change this to the desired language
-    // window.setTimeout(function () {window.speechSynthesis.speak(utterance);}, 250);
+    const voices = speechSynthesis.getVoices().filter(voice => voice.voiceURI === 'Google US English');
+    if (voices.length > 0) {utterance.voice = voices[0];};
     window.speechSynthesis.speak(utterance);
 }
 
