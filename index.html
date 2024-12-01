@@ -180,9 +180,9 @@ function replacePlaceholders(response, userInput) {
         .replace(/BOOK_MOVIE_URL/g, "https://www.google.com/search?q=" + userInput.replace(/ /g, '+') + "+on+Book+My+Show&btnI")
         .replace(/BOOK_BUS_URL/g, "https://www.google.com/search?q=" + userInput.replace(/ /g, '+') + "+on+red+bus&btnI")
         .replace(/BOOK_TRAIN_URL/g, "https://www.google.com/search?q=" + userInput.replace(/ /g, '+') + "&btnI")
-        .replace(/BOOK_FLIGHT_URL/g, "https://www.google.com/search?q=" + userInput.replace(/ /g, '+') + "+on+indigo&btnI");
+        .replace(/BOOK_FLIGHT_URL/g, "https://www.google.com/search?q=" + userInput.replace(/ /g, '+') + "+on+indigo&btnI")
         .replace(/GOOGLE_URL/g, "https://www.google.com/search?q=show+" + userInput.replace(/ /g, '+') + "&btnI")
-        .replace(/GOOGLE_REDIRECT_URL/g, "https://www.google.com/search?q=show+" + userInput.replace(/ /g, '+') + "&btnI")
+        .replace(/GOOGLE_REDIRECT_URL/g, "https://www.google.com/search?q=show+" + userInput.replace(/ /g, '+') + "&btnI");
 }
 
 // Function to process user input
