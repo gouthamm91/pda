@@ -166,7 +166,9 @@ function replacePlaceholders(response, userInput) {
     return response
         .replace(/PDA_NAME/g, "Atlas")
         .replace(/CURRENT_TIME/g, getCurrentTime())
+        .replace(/TIME/g, getCurrentTime())
         .replace(/CURRENT_DATE/g, getCurrentDate())
+        .replace(/DATE/g, getCurrentDate())
         // .replace(/GPS_URL/g, "https://www.google.com/maps?q=" + encodeURIComponent(userInput.replace(/ /g, '+')))
         // .replace(/MY_SEARCH_URL/g, "https://void-web-search-app.vercel.app/search/" + encodeURIComponent(userInput.replace(/ /g, '+')))
         // .replace(/SEARCH_URL/g, "https://www.google.com/search?q=" + encodeURIComponent(userInput.replace(/ /g, '+')) + "&igu=1");
@@ -179,6 +181,8 @@ function replacePlaceholders(response, userInput) {
         .replace(/BOOK_BUS_URL/g, "https://www.google.com/search?q=" + userInput.replace(/ /g, '+') + "+on+red+bus&btnI")
         .replace(/BOOK_TRAIN_URL/g, "https://www.google.com/search?q=" + userInput.replace(/ /g, '+') + "&btnI")
         .replace(/BOOK_FLIGHT_URL/g, "https://www.google.com/search?q=" + userInput.replace(/ /g, '+') + "+on+indigo&btnI");
+        .replace(/GOOGLE_URL/g, "https://www.google.com/search?q=show+" + userInput.replace(/ /g, '+') + "&btnI")
+        .replace(/GOOGLE_REDIRECT_URL/g, "https://www.google.com/search?q=show+" + userInput.replace(/ /g, '+') + "&btnI")
 }
 
 // Function to process user input
