@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Assistant</title>
+    <title>Personal Assistant 0.2</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -193,9 +193,26 @@ function replacePlaceholders(response, userInput) {
         .replace(/GOOGLE_REDIRECT_URL/g, "https://www.google.com/search?q=show+" + userInput.replace(/ /g, '+') + "&btnI");
 }
 
+function getWordsStartingWithUpperCase(sentence) {
+  // Regular expression to match words starting with an uppercase letter.
+  const regex = /[A-Z][a-z]*/g;
+
+  // Find all matches in the sentence.
+  const matches = sentence.match(regex);
+
+  // Return the matches or an empty array if no matches are found.
+  return matches || [];
+}
+
+var lastResponse = "";
+var lastName = ""
+
 // Function to process user input
 function handleUserInput() {
     const userInput = document.getElementById("user-input").value;
+    var inp = " " + document.getElementById("user-input").value.toLowerCase() + " ";
+    var inp = inp.split(" he ").join(" " + lastName + " ").split(" she ").join(" " + lastName + " ").split(" it ").join(" " + lastName + " ").split(" that ").join(" " + lastName + " ").split(" this ").join(" " + lastName + " ");
+
     const userInputEditted = document.getElementById("user-input").value.replace(/\./g, " . ").replace(/\?/g, " ? ").replace(/\!/g, " ! ").replace(/\,/g, " , ").replace(/\:/g, " : ").replace(/\'/g, " ' ").replace(/\"/g, " \" ");
     const chatLog = document.getElementById("chat-log");
 
@@ -216,6 +233,11 @@ function handleUserInput() {
     }
     const assistantMessage = document.createElement("p");
     assistantMessage.innerHTML = "Atlas: " + displayResponse;
+
+    lastResponse = displayResponse;
+    var names = getWordsStartingWithUpperCase(lastResponse);
+    lastName = names[0] + " " + names[1];
+
     chatLog.appendChild(assistantMessage);
 
     // Clear user input and scroll chat to the bottom
